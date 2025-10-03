@@ -1,0 +1,108 @@
+doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carta para mi novia</title>
+<style>
+:root{
+  --bg:#f3e8ff;
+  --card:#e6ccff;
+  --accent:#a64dff;
+  --muted:#4b3b5e;
+}
+body{
+  font-family:Arial,sans-serif;
+  background: linear-gradient(180deg,#f3e8ff,#d1b3ff);
+  padding:28px;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+}
+.card{
+  background:var(--card);
+  border-radius:18px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  padding:26px;
+  max-width:700px;
+  width:100%;
+}
+h1{
+  color:var(--accent);
+  text-align:center;
+  margin-bottom:16px;
+}
+p{
+  color:#222;
+  line-height:1.6;
+  margin-bottom:18px;
+}
+h2{
+  color:var(--accent);
+  text-align:center;
+  margin-top:20px;
+  margin-bottom:12px;
+}
+.carta-img{
+  width:100%;
+  border-radius:12px;
+  margin-top:12px;
+}
+.qr-section{
+  text-align:center;
+  margin-top:20px;
+}
+#gift{
+  width:150px;
+  cursor:pointer;
+  margin:0 auto;
+}
+#qr{
+  display:none;
+  margin-top:12px;
+  width:240px;
+  height:240px;
+  border-radius:20px;
+  border:4px solid #a64dff;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Nuestro primer mes juntos ❤️</h1>
+  <p>Este año está siendo uno muy especial para mí, muchas cosas buenas me están pasando, pero de lejos lo mejor es el haber conocido al amor de mi vida. Nunca me imaginé que mi 2025 estaría marcado por una persona tan maravillosa como vos, una persona capaz de hacer tantas cosas, tener tantos talentos y ser tan inteligente; para mí era casi imposible que exista alguien semejante. <br><br>
+  Es el primero de muchos meses mi vida, preparate para vivir la mejor relación que vas a tener, voy a mover cielo y tierra para satisfacerte. Te amo con todo lo que tengo.</p>
+
+  <h2>Mi princesa 👑</h2>
+
+  <!-- Bloque de fotos -->
+  <img src="foto1.jpg" alt="Foto 1" class="carta-img">
+  <img src="foto2.jpg" alt="Foto 2" class="carta-img">
+  <img src="foto3.jpg" alt="Foto 3" class="carta-img">
+
+  <div class="qr-section">
+    <h2>Canciones que me hacen pensár en vos</h2>
+    <img id="gift" src="regalo.jpg" alt="Abreme para ver una sorpresa">
+    <img id="qr" src="" alt="QR Playlist">
+  </div>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="Wasia Project - ur so pretty (Official Audio)(MP3_160K).mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+</div>
+
+<script>
+const gift = document.getElementById('gift');
+const qr = document.getElementById('qr');
+const playlistLink = "https://open.spotify.com/playlist/4wxa9gUF8tXv6GplKYgsZF?si=4DsXAVZbTmS8jRY76Gbg9w&pi=R-YOyciFQqmxf";
+
+gift.addEventListener('click', ()=>{
+    qr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(playlistLink);
+    qr.style.display = 'block';
+});
+</script>
+</body>
+</html>
